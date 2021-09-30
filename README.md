@@ -12,5 +12,5 @@ Student Info
 
 * Name: Đoàn Đình Nam
 * ID: BA9-045
-* Group ID: 9
+* Group ID: 9 
 
