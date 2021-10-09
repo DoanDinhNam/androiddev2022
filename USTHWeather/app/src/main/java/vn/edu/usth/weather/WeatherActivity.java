@@ -6,15 +6,14 @@ import android.os.Bundle;
 import android.util.Log;
 
 public class WeatherActivity extends AppCompatActivity {
-
+    public static final String mess="Android";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        ForecastFragment ff = ForecastFragment.newInstance("","");
-        getSupportFragmentManager().beginTransaction().add(
-                R.id.container, ff).commit();
-
+        Log.i(mess,"onCreate");
+        ForecastFragment firstFragment = new ForecastFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.container,firstFragment).commit();
     }
     @Override
     protected void onStart() {
