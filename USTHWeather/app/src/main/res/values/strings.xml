@@ -1,14 +1,18 @@
 <resources>
-    <string name="app_name">USTH Weather</string>
+    <string name="app_name" translatable="false">USTH Weather</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_main">MainActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="mon" translatable="false">Mon</string>
+    <string name="tues" translatable="false">Tue</string>
+    <string name="wed" translatable="false">Wed</string>
+    <string name="thus" translatable="false">Thus</string>
+    <string name="fri" translatable="false">Fri</string>
+    <string name="sat" translatable="false">Sat</string>
+    <string name="sun" translatable="false">Sun</string>
+    <string name="par" translatable="false">Partly Cloudy</string>
+    <string name="sunny" translatable="false">Sunny</string>
+    <string name="cloudy" translatable="false">Cloudy</string>
+    <string name="rain" translatable="false">Rain</string>
+    <string name="raincloudy" translatable="false">Rain Cloudy</string>
+    <string name="snowy">Sleet</string>
 </resources>
