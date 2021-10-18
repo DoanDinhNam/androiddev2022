@@ -2,19 +2,19 @@
     <string name="app_name" translatable="false">USTH Weather</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <string name="mon" translatable="false">Mon</string>
-    <string name="tues" translatable="false">Tue</string>
-    <string name="wed" translatable="false">Wed</string>
-    <string name="thus" translatable="false">Thus</string>
-    <string name="fri" translatable="false">Fri</string>
-    <string name="sat" translatable="false">Sat</string>
-    <string name="sun" translatable="false">Sun</string>
-    <string name="par" translatable="false">Partly Cloudy</string>
-    <string name="sunny" translatable="false">Sunny</string>
-    <string name="cloudy" translatable="false">Cloudy</string>
-    <string name="rain" translatable="false">Rain</string>
-    <string name="raincloudy" translatable="false">Rain Cloudy</string>
-    <string name="snowy">Sleet</string>
+    <string name="mon" translatable="false">Thứ 2</string>
+    <string name="tues" translatable="false">Thứ 3</string>
+    <string name="wed" translatable="false">Thư 4</string>
+    <string name="thus" translatable="false">Thứ 5</string>
+    <string name="fri" translatable="false">Thứ 6</string>
+    <string name="sat" translatable="false">Thứ 7</string>
+    <string name="sun" translatable="false">Chủ Nhật</string>
+    <string name="par" translatable="false">Có mây</string>
+    <string name="sunny" translatable="false">Có nắng</string>
+    <string name="cloudy" translatable="false">Nhiều Mây</string>
+    <string name="rain" translatable="false">Mưa</string>
+    <string name="raincloudy" translatable="false">Mưa Lớn</string>
+    <string name="snowy">Có tuyết</string>
     <string name="large_text">Large Text</string>
     <string name="title_activity_homepager_adapter">HomepagerAdapter</string>
     <string name="first_fragment_label">First Fragment</string>
