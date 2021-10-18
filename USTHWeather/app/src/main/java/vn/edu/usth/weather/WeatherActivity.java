@@ -1,7 +1,8 @@
 package vn.edu.usth.weather;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -12,8 +13,9 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
         Log.i(mess,"onCreate");
-        WeatherFragment secondFragement =new WeatherFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.container,secondFragement).commit();
+    PagerAdapter adapter = new AdapterPage(getSupportFragmentManager());
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        pager.setAdapter(adapter);
     }
     @Override
     protected void onStart() {
