@@ -5,6 +5,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
+import android.media.MediaPlayer;
 
 public class WeatherActivity extends AppCompatActivity {
     public static final String mess="Android";
@@ -16,6 +17,8 @@ public class WeatherActivity extends AppCompatActivity {
     PagerAdapter adapter = new AdapterPage(getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(adapter);
+        MediaPlayer mp = MediaPlayer.create(getBaseContext(), R.raw.QC);
+        mp.start();
     }
     @Override
     protected void onStart() {
