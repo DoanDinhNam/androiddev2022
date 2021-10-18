@@ -1,7 +1,12 @@
 package vn.edu.usth.weather;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.view.Menu;
+import android.widget.Toast;
+import android.view.MenuInflater;
 import androidx.viewpager.widget.PagerAdapter;
+import android.view.MenuItem;
+import android.content.Intent;
 import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +24,25 @@ public class WeatherActivity extends AppCompatActivity {
         pager.setAdapter(adapter);
         MediaPlayer mp = MediaPlayer.create(getBaseContext(), R.raw.QC);
         mp.start();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.refresh:
+                Toast toast = Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT);
+                toast.show();
+                super.onRestart();
+
+            case R.id.settings:
+                Intent intent = new Intent(this, PrefActivity.class);
+                startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
     @Override
     protected void onStart() {

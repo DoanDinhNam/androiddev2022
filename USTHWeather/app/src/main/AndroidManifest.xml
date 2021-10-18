@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.USTHWeather">
         <activity
+            android:name=".PrefActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".PrefActivity"
+            android:exported="true"
+            tools:ignore="DuplicateActivity" />          
+        <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
