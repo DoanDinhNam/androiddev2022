@@ -10,6 +10,9 @@ import android.content.Intent;
 import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.media.MediaPlayer;
 
 public class WeatherActivity extends AppCompatActivity {
@@ -74,6 +77,34 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         Log.i("Weather", "onRestart() called");
+    }
+    public void Refresh() {
+        final Handler handler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                String content = msg.getData().getString("T1 VO DICH");
+                Toast toast = Toast.makeText(getApplicationContext(), content, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        };
+        Thread th = new Thread(() -> {
+            try {
+                int i;
+                for (i=0;i<10;i++){
+                    Log.i(mess,"loop"+i);
+                    Thread.sleep(1000);
+                }
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            Bundle bundle = new Bundle();
+            bundle.putString("Response", "Refreshing...");
+            Message msg = new Message();
+            msg.setData(bundle);
+            handler.sendMessage(msg);
+        });
+        th.start();
     }
 
 }
