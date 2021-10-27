@@ -14,6 +14,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.media.MediaPlayer;
+import android.annotation.SuppressLint;
+import android.os.AsyncTask;
 
 public class WeatherActivity extends AppCompatActivity {
     public static final String mess="Android";
@@ -87,24 +89,43 @@ public class WeatherActivity extends AppCompatActivity {
                 toast.show();
             }
         };
-        Thread th = new Thread(() -> {
-            try {
-                int i;
-                for (i=0;i<10;i++){
-                    Log.i(mess,"loop"+i);
-                    Thread.sleep(1000);
-                }
+    @SuppressLint("StaticFieldLeak")
+    public void Refresh() {
+        AsyncTask<Integer, Integer, Integer> taskA = new AsyncTask<Integer, Integer, Integer>() {
 
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            @Override
+            protected void onPreExecute() {
+                Toast toast = Toast.makeText(getApplicationContext(), "Starting delay Android", Toast.LENGTH_SHORT);
+                toast.show();
             }
-            Bundle bundle = new Bundle();
-            bundle.putString("Response", "Refreshing...");
-            Message msg = new Message();
-            msg.setData(bundle);
-            handler.sendMessage(msg);
-        });
-        th.start();
+
+            @Override
+            protected void onPostExecute(Integer integer) {
+                Toast toast = Toast.makeText(getApplicationContext(),  "Finished delay Android", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+
+            @Override
+            protected void onProgressUpdate(Integer... values) {
+                Toast toast = Toast.makeText(getApplicationContext(), "Uppdate  Android",+ values[0]);
+                toast.show();
+            }
+            @SuppressLint("StaticFieldLeak")
+            @Override
+            protected Integer doInBackground(Integer... integers) {
+                try {
+                    int i;
+                    for (i = 0; i < 10; i++) {
+                        Thread.sleep(1000);
+                        ProgressHandlerMessage.sendEmptyMessage(i);
+                    }
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return 0;
+            }
+        };
     }
 
 }
